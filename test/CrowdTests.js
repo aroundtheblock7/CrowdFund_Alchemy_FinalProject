@@ -106,5 +106,10 @@ describe('Token Contract()', () => {
             expect (await ownerBalance == "3");
         });
 
+        it("Should ensure the campaign has been claimed", async () => {
+            const claimed = await crowdfund.campaigns(1).claimed;
+            expect(await claimed == true)
+        });
+
     });
 });
