@@ -25,14 +25,14 @@ describe('Token Contract()', () => {
          console.log(await crowdcoin.balanceOf(addr1.address));
         });
         
-        it('Should allow addr1 to mint 5 crowdcoin tokens', async () => {
+        it('Should allow addr2 to mint 5 crowdcoin tokens', async () => {
             const MINT_ETHER = ethers.utils.parseEther("5");
             await crowdcoin.connect(addr2).mint(MINT_ETHER);
             expect(await crowdcoin.balanceOf(addr2.address)).to.equal(ethers.utils.parseEther("5"));
             console.log(await crowdcoin.balanceOf(addr2.address));
         });
 
-        it("Should allow under to launch a project", async () => {
+        it("Should allow owner to launch a project", async () => {
             console.log(((new Date().getTime()/1000).toString()));
             const a = Math.floor(Number((new Date().getTime()/1000).toString()));
             const b = Math.floor(Number(((new Date().getTime()/1000) + 1000).toString()));
