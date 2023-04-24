@@ -37,7 +37,6 @@ contract CrowdFund {
     event Refund(uint indexed id, address indexed caller, uint amount);
 
     function launch(uint _goal, uint32 _startAt, uint32 _endAt) external {
-        //require(_startAt >= block.timestamp, "start at < now");
         require(_endAt >= _startAt, "end at < start at");
         require(_endAt <= block.timestamp + 90 days, "end at > max duration");
 
@@ -65,7 +64,6 @@ contract CrowdFund {
     function pledge(uint _id, uint _amount) external payable {
         Campaign storage campaign = campaigns[_id];
         require(block.timestamp >= campaign.startAt, "not started");
-        //require(block.timestamp <= campaign.endAt, "ended");
 
         campaign.pledged += _amount;
         pledgedAmount[_id][msg.sender] += _amount;
@@ -89,7 +87,6 @@ contract CrowdFund {
     function claim(uint _id) external {
         Campaign storage campaign = campaigns[_id];
         require(msg.sender == campaign.creator, "not creator");
-        //require(block.timestamp > campaign.endAt, "not ended");
         require(campaign.pledged >= campaign.goal, "pledged < goal");
         require(!campaign.claimed, "claimed");
 

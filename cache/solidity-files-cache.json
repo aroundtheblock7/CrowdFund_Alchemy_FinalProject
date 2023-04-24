@@ -621,8 +621,8 @@
       ]
     },
     "/Users/josephdeangeloi/Documents/Github/CrowdFund_Alchemy_FinalProject/contracts/CrowdFund.sol": {
-      "lastModificationDate": 1679836604986,
-      "contentHash": "d19767eb3411709814169651699cd812",
+      "lastModificationDate": 1682350390762,
+      "contentHash": "6320070c1e5522c279ab13d69db6f603",
       "sourceName": "contracts/CrowdFund.sol",
       "solcConfig": {
         "version": "0.8.17",
